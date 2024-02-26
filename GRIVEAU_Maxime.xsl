@@ -156,7 +156,103 @@
                 
                 .footer p {
                     text-align: center;
-                }</style>
+                    
+                }
+            
+            /* Le style de l'arbre est inspiré de https://codepen.io/jreaux62/pen/GJmOMP */
+            .tree {
+            color: #fff; 
+            
+            }
+            
+            
+            .tree ul {
+            padding-top: 20px;
+            position: relative;
+            display: flex;
+            
+            justify-content: center;
+            }
+            
+            .tree li {
+            text-align: center;
+            list-style-type: none;
+            position: relative;
+            padding: 20px 5px 0 5px;
+            transition: all 0.5s;
+            }
+            
+            /* On créé des lignes (forcément vides) [content : '' sert à cela] qui se placent avant et après chaque élément li */
+            .tree li::before, .tree li::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50%;
+            border-top: 1px solid #999; 
+            width: 50%;
+            height: 20px;
+            }
+            
+            
+            
+            .tree li::after {
+            right: auto;
+            left: 50%;
+            border-left: 1px solid #999;
+            }
+            
+            /* Pour éviter que des lignes verticales apparaissent après les derniers enfants de l'arbre généalogique */
+            .tree li:only-child::after, .tree li:only-child::before {
+            display: none;
+            }
+            
+            /*Pour que les enfants soient bien "collés" aux lignes*/
+            .tree li:only-child {
+            padding-top: 0;
+            }
+            
+            /* Pour éviter que des lignes horizontales apparaissent après les derniers enfants de l'abree*/
+            .tree li:first-child::before, .tree li:last-child::after {
+            display: none;
+            }
+            
+            /* Les dernières lignes ont une bordures ronde */
+            .tree li:last-child::before {
+            border-right: 1px solid #999;
+            border-radius: 0 5px 0 0;
+            }
+            .tree li:first-child::after {
+            border-radius: 5px 0 0 0;
+            }
+            
+            
+            
+          
+            
+            /* Création de lignes verticales entre le premier et le second niveau de liste */
+            .tree ul ul::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-left: 1px solid #999;
+            width: 0;
+            height: 20px;
+            }
+            
+      
+            
+            /* Ce code fait en sorte que l'arbre n'ai aucun arrière plan*/
+            .tree div {
+            background: none;
+            color: #fff; /* White text */
+            }
+            
+            
+            
+            </style>
+            
+            
 
 
         </head>
@@ -506,7 +602,7 @@
                                     </xsl:if>
                                     <xsl:if
                                         test="persName[@role = 'fils'] | persName[@role = 'fille']">
-                                        <li class="fils-filles">
+                                        <li class="enfants">
                                             <b>Enfants : </b>
                                             <ul>
                                                 <li>
@@ -862,11 +958,10 @@
                     <div>
                         <xsl:value-of select="./entry/re[@type = 'genealogie']"/>
                     </div>
-                    <!-- Cette structure génère, sous forme de liste à puces imbriquées, un arbre généalogique qui est ensuite traité en CSS pour le rendu. La première boucle xsl:if permet de s'assurer qu'au moins une condition est remplie avant de débuter. -->
+                    <!-- Cette structure génère, sous forme de liste à puces imbriquées, un arbre généalogique qui est ensuite traité en CSS pour le rendu. Notez que ce dernier n'est pas optimal (on aurait aimé un abre dans le sens vertical) mais mes compétences en CSS se limitent rapidement -->
                     <div class="tree">
                         <xsl:for-each select="./entry/re[@type = 'genealogie']">
-                            <xsl:if
-                                test="persName[@role = 'ancetre'] | persName[@role = 'grand-pere'] | persName[@role = 'grand-mere'] | persName[@role = 'pere'] | persName[@role = 'mere'] | persName[@role = 'epouse'] | persName[@role = 'mari']">
+                          
                                 <ul>
                                     <xsl:if test="persName[@role = 'ancetre']">
                                         <li class="ancetre">
@@ -1028,7 +1123,7 @@
                                         </li>
                                     </xsl:if>
                                 </ul>
-                            </xsl:if>
+                            
                         </xsl:for-each>
                     </div>
 
