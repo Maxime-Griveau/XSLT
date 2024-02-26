@@ -737,18 +737,18 @@
                   </re>
                   <re type="Laios_consulte_Apollon_à_Delphes">
                      
-                        <figure>
-                           <ab>Voir <ref target="apo_4">Apollon 4</ref>, la scène d'interprétation
-                           es t discutée: &LAO;, <ref target="oed">Oedipe </ref>ou <ref target="xou"
-                              >Xouthos</ref> devant <ref target="apo">Apollon</ref>?
-                        </ab>
-                        </figure>
+                        
+                     <xr>Voir <ref target="apo_4">Apollon 4</ref>, la scène d'interprétation
+                        es t discutée: &LAO;, <ref target="oed">Oedipe </ref>ou <ref target="xou"
+                           >Xouthos</ref> devant <ref target="apo">Apollon</ref>?
+                        
+                     </xr>
                               
                   </re>
                   
-                        <figure xml:id="lao_7">
+                        <figure n="2">
                            <graphic
-                              url="https://utpictura18.univ-amu.fr/notice/20592-sarcophage-dadonis-couvercle-depareille-theme-doedipe"/>
+                              xml:id="lao_2" url="https://utpictura18.univ-amu.fr/notice/20592-sarcophage-dadonis-couvercle-depareille-theme-doedipe"/>
                            <!-- C'est la seule image que l'on peut trouver concernant ce document : comme il s'agit d'automatiser les taches on pourra, dans le futur, reprendre les images du LIMC plutot que d'en chercher d'autres -->
                            <ab>Couvercle de sarcophage. Vatican (anc.Latran), Mus. Greg. Prof.
                               10408. De Rome ; Sept scènes consécutives: 1) &LAO; suivi d'un
@@ -763,9 +763,9 @@
                      
                      <re type="Laois_et_l'abandon_d'Oedipe">
                         
-                           <figure xml:id="lao_2">
+                           <figure n="3">
                               <graphic
-                                 url="https://www.beazley.ox.ac.uk/record/EDBEFD06-6DAF-4779-BE3A-D34105EA600D"/>
+                                 xml:id="lao_3"  url="https://www.beazley.ox.ac.uk/record/EDBEFD06-6DAF-4779-BE3A-D34105EA600D"/>
                               <ab type="caption"> A: Euphorbos (named) in chitoniskos and petasos
                                  with spear carrying the infant oedipus (named) B: draped men with
                                  staff.</ab>
@@ -778,10 +778,10 @@
                         
                      </re>
                      <re type="Le_combat_avec_Oedipe_et_la_mort_de_Laios">
-                        <figure xml:id="lao_3">
+                        <figure  n="4">
 
                            <graphic
-                              url="https://www.beazley.ox.ac.uk/record/2332C4CA-375A-42A0-BCE0-D486CCFBC284"/>
+                              url="https://www.beazley.ox.ac.uk/record/2332C4CA-375A-42A0-BCE0-D486CCFBC284" xml:id="lao_4"/>
 
                            <ab type="caption"> (fragments): death of laios, oedipus (?), man in
                               animal skin with kentron (named), chariot, woman (named). Une grande

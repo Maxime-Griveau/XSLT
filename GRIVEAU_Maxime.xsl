@@ -21,8 +21,8 @@
     <xsl:variable name="header">
 
         <head>
-            <!-- Métadonnées générales -->
-            <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+            
+            
 
             <!-- Titre -->
 
@@ -416,10 +416,11 @@
                                 <xsl:value-of select="//encodingDesc/projectDesc"/></p>
 
                     </div>
+                    <xsl:copy-of select="$footer"/>
                 </body>
 
 
-                <xsl:copy-of select="$footer"/>
+                
             </html>
 
         </xsl:result-document>
@@ -818,11 +819,13 @@
                                             <b><xsl:value-of select="@n"/>. </b>
                                             <xsl:value-of select="./ab"/>
                                         </p>
+                                        <!--S'il n'y a pas d'élément graphic, cette condition n'a pas lieu : sinon ça créé des liens vides-->
+                                        <xsl:if test="./graphic">
                                         <p>
                                             <a href="{graphic/@url}">Voir la notice sur Beazley
                                                 archive</a>
                                         </p>
-
+                                        </xsl:if>
                                     </xsl:for-each>
                                 </xsl:for-each>
                             </xsl:for-each>
@@ -1280,10 +1283,14 @@
                                             <b><xsl:value-of select="@n"/>. </b>
                                             <xsl:value-of select="./ab"/>
                                         </p>
+                                        
+                                        <!--S'il n'y a pas d'élément graphic, cette condition n'a pas lieu : sinon ça créé des liens vides-->
+                                        <xsl:if test="./graphic">
                                         <p>
                                             <a href="{graphic/@url}">Voir la notice sur Beazley
                                                 archive</a>
                                         </p>
+                                        </xsl:if>
 
                                     </xsl:for-each>
                                 </xsl:for-each>
@@ -1348,23 +1355,6 @@
 
 
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                     <xsl:copy-of select="$footer"/>
                 </body>
